@@ -1,0 +1,25 @@
+.ms{
+    padding-top: 150px;
+    padding-bottom: 5px;
+    font-size: 50px;
+}
+
+.fa-check{
+
+ font-size: 150px;   
+  color : #28a745!important;
+  margin-bottom: 10px;
+}
+
+.text-success {
+    
+    padding-top: 20px;
+}
+
+
+.fa-window-close{
+
+ font-size: 150px;   
+  color :#dc3545!important;
+  margin-bottom: 10px;
+}

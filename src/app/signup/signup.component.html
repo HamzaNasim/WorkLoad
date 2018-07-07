@@ -1,0 +1,171 @@
+  <!-- ========== service Start ========== -->  
+    <section id="signup" class="section sm-p-15px-lr">
+        <div class="container"> 
+
+          <div class="row justify-content-center m-65px-b  md-m-40px-b sm-m-30px-b">
+            <div class="col-12 col-md-10 col-lg-8 text-center">
+              <h4 class="color-extra-dark-gray font-w-700 m-0px m-15px-b">Account <span class="color-theme">Registration</span></h4>
+              
+              <p class="font-17 m-0px m-20px-t sm-font-14 color-extra-dark-gray">Please use your work email address and details, so we can connect you with your team in Work Load.</p>
+            </div> <!-- col -->
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-12 col-lg-3 dark-bg">
+              <div class="p-15px sm-p-5px-lr">
+                <h5 class="color-white font-18 m-15px-b font-w-600 m-0px">Contact Info</h5>
+                <div class="row">
+                  <div class="col-12 col-md-4 col-lg-12 m-10px-tb">
+                    <i class="icon-map-pin color-white font-22"></i>
+                    <h4 class="color-white font-w-300 font-13 text-uppercase font-alt m-0px">Location</h4>
+                    <p class="m-0px m-5px-t">Department of Computer Science,<br> University of Karachi.</p>
+                  </div>
+
+                  <div class="col-12 col-md-4 col-lg-12 m-10px-tb">
+                      <i class="icon-envelope color-white font-22"></i>
+                      <h4 class="color-white font-w-300 font-14 text-uppercase font-alt m-0px">Email</h4>
+                      <p class="m-0px m-5px-t">workLoad@gmail.com<br>support@workload.com</p>
+                  </div>
+
+                  <div class="col-12 col-md-4 col-lg-12 m-10px-tb">
+                      <i class="icon-mic font-22 color-white"></i>
+                      <h4 class="color-white font-w-300 font-14 text-uppercase font-alt m-0px">Numbers</h4>
+                      <p class="m-0px m-5px-t">+01 (989) 000 5665<br>+92 (341) 325 1655</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-6 border-all border-grey box-shadow-large">
+              <div class="p-20px md-p-10px-lr sm-p-5px-lr">
+                <h4 class="color-extra-dark-gray font-20 font-w-600 font-alt m-0px m-35px-b sm-m-15px-b">Sign Up Form</h4>
+                
+                <form #registrationForm = "ngForm"  (ngSubmit) = "save(registrationForm)">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="form-group" >                     
+                   <input name="FName" id="FName" placeholder="Full Name *" class="input-medium" class="form-control"  pattern="[a-zA-Z][a-zA-Z ]+"  type="text"  #FName = "ngModel" [(ngModel)] = "user.FName" required>
+                       <span class="highlight"></span>
+                       <span class="bar"></span>
+                       <div *ngIf="FName.touched && FName.invalid " class="alert alert-danger">
+                       <div *ngIf="FName.errors.required"> Name is required.</div>
+                      <div *ngIf="FName.errors?.pattern">Not Valid</div> 
+                       
+                       </div>      
+                    </div>
+                  </div>
+
+          
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <input name="username" id="username" #username = "ngModel" placeholder="user name *" class="input-medium" class="form-control" type="text"   [(ngModel)] = "user.username" required uniqueUser >
+                      <span class="highlight"></span>
+                       <span class="bar"></span>
+                        <div *ngIf=" username.invalid  && username.touched  " class="alert alert-danger">
+            
+                           <div *ngIf="username.errors.required">username is required..</div>
+                         <div *ngIf="username.errors.uniqueUser">username is not available</div>
+                   
+
+          
+                        
+                        </div>
+                       </div>
+                    </div>
+                   
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <input name="email" id="email"  placeholder="Email *" class="input-medium" class="form-control" type="email" #email = "ngModel" [(ngModel)] =  "user.email" required email>
+                      <span class="highlight"></span>
+                       <span class="bar"></span>
+                        <div *ngIf="email.touched && email.invalid " class="alert alert-danger">
+                         <div *ngIf="email.errors.required">Email is required..</div>
+                         <div *ngIf="email.errors.email">Please enter a valid email</div>
+                       </div>
+                        
+                    </div>
+                  </div>
+
+                   <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <input name="contactno" placeholder="Contact No " class="input-medium" pattern="^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$"  class="form-control"  #contact = "ngModel"  [(ngModel)] = "user.ContactNo" required>
+                      <span class="highlight"></span>
+                       <span class="bar"></span>               
+                      <div *ngIf="contact.errors?.pattern" class="alert alert-danger">Not Valid Phone number</div>                       
+                    </div>
+                  </div>
+                   <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <input name="password" placeholder="Password *" class="input-medium"  class="form-control" type="password" #password = "ngModel"  [(ngModel)] = "user.password" required>
+                      <span class="highlight"></span>
+                       <span class="bar"></span>
+                        <div *ngIf="password.touched && password.invalid " class="alert alert-danger">
+                         Password is required.
+                       </div>
+                    </div>
+                  </div>
+
+                     <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <input name="confpassword" placeholder="Confirm Password *" class="input-medium"  class="form-control" type="password" #confpassword = "ngModel" [(ngModel)] = "mess" required [equalTo]="password">
+                      <span class="highlight"></span>
+                       <span class="bar"></span>
+                        <div *ngIf="confpassword.touched && confpassword.invalid " class="alert alert-danger">
+                          <div *ngIf="confpassword.errors.required">Confirm Password is required..</div>
+                         <div *ngIf="confpassword.errors.equalTo">Password doesn't match.</div>
+                       </div>
+                    </div>
+                  </div>
+
+
+
+                  <!-- <div class="col-12">
+
+                    <div class="form-group">
+                      <textarea name="comment" placeholder="Describe your project" rows="6" class="textarea-medium"></textarea>
+                    </div>
+                  </div> -->
+
+
+
+                  <div class="col-12 sign">
+                    <button type="submit"  [disabled]="registrationForm.form.invalid" class="m-btn m-btn-t-black text-uppercase">Sign Up</button>
+                    <!-- <a disable (click) = "save(registrationForm.value)" class="m-btn m-btn-t-black text-uppercase">Sign Up</a> -->
+                  </div>
+
+                 <p class=" kogMes col-12 color-extra-dark-black font-20  font-alt m-0px m-35px-b sm-m-15px-b">Have an account? <a routerLink = "/login">Login</a></p>               
+                </div>  
+                
+                 <p   class="succe text text-success">{{resMes}}</p>
+         
+                   <p  *ngIf = "!resMes" class="succe text text-danger">{{failMes}}</p>
+             
+              
+                </form>
+              </div>
+            </div> <!-- col -->
+          </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    <!-- ========== services End ========== -->
+
+
+
+     <!-- ========== Footer Start ========== -->
+  <footer>
+    <div class="dark-bg section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <ul class="social-icons social-icons-small m-40px-b sm-m-20px-b">
+                <li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a class="google" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                <li><a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a></li>
+              </ul>
+            <p class="m-0px color-medium-gray letter-spacing-1 font-14">All © Copyright by Work Load. All Rights Reserved.</p>
+          </div><!-- col -->
+        </div> <!-- row -->
+      </div> <!-- container -->
+    </div> <!-- bg-dark -->
+  </footer>
+  <!-- ========== Footer End ========== --> 

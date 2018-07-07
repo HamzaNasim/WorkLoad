@@ -1,0 +1,87 @@
+<div>
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+			<i class="zmdi zmdi-account-circle"></i>
+				<form class="login100-form validate-form" #loginForm = "ngForm"  (ngSubmit) = "login(loginForm.value)">
+					<span class="login100-form-title p-b-26">
+						Login
+					</span>
+					<span class="login100-form-title p-b-48">
+						
+					</span>
+					<div class="wrap-input100  validate-input" data-validate = "Valid email is: a@b.c">
+						<input class="form-control"  class="input100"  name="email" type="text"  #email = "ngModel"  [(ngModel)] = "user.email" required>
+						<span class="focus-input100 ph" data-placeholder="Email"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input " data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="form-control"  class="input100" type="password" name="password" #password = "ngModel"  [(ngModel)] = "user.password" required>
+						<span class="focus-input100 ph" data-placeholder="Password"></span>
+					</div>
+
+					<div class="container-login100-form-btn"> 
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button type="submit" class="login100-form-btn">
+								Login
+							</button>
+						</div>
+					</div>
+					
+						<div class="text-center">
+								<span >
+						<p class="txt1 text text-success">{{succMess}}</p> 
+					 <p *ngIf ="!succMess" class="txt1 text text-danger">{{failMess}}</p> 					 
+					</span>
+							</div>
+
+				
+
+					<div class="text-center p-t-115">
+						<span class="txt1">
+							Don’t have an account?
+						</span>
+
+						<a class="txt2" routerLink = "/signup">
+							Sign Up
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+</div>
+  <div id="dropDownSelect1"></div>
+  <div>
+  
+    <br/>
+    <br/>
+   <!-- ========== Footer Start ========== -->
+  <footer>
+    <div class="dark-bg section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 tex-center">
+            <ul class="social-icons social-icons-small m-40px-b sm-m-20px-b">
+                <li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a class="google" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                <li><a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a></li>
+              </ul>
+            <p class="m-0px footText color-medium-gray letter-spacing-1 font-14">All © Copyright by Work Load. All Rights Reserved.</p>
+          </div><!-- col -->
+        </div> <!-- row -->
+      </div> <!-- container -->
+    </div> <!-- bg-dark -->
+  </footer>
+  <!-- ========== Footer End ========== -->   
+  </div>
+
+
+
+  

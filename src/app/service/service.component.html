@@ -1,0 +1,21 @@
+<br/>
+<br/> 
+<br/>
+<br/>
+<br/>     
+
+<div class="ms text-center">
+  <i *ngIf="!failMessage" class="fas fa-check"></i>
+  <br/>
+					<span >
+          <p class="text-success">{{resMessage}}</p> 					 
+          </span>
+          
+         	<span >
+          <i *ngIf="!resMessage" class="fas fa-window-close"></i>
+          <br/>
+          <br/>
+          <p class="text-danger">{{failMessage}}</p> 					 
+          </span>
+</div>
+
